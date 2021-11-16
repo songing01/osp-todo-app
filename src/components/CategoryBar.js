@@ -10,7 +10,7 @@ const CategoryBar = ({ onPressOut }) => {
   return (
     <StyledView>
       <Category>
-        <Text>Food</Text>
+        <Title>Food</Title>
         <IconButton onPressOut={onPressOut} type={images.add} />
       </Category>
       <Dropdown>Dropdown</Dropdown>
@@ -29,7 +29,11 @@ const StyledView = styled.View`
 
 const Category = styled.View`
   flex-direction: row;
-  font-size: 20;
+  align-items: center;
+`;
+
+const Title = styled.Text`
+  font-size: 20px;
 `;
 
 const Dropdown = styled.Text``;

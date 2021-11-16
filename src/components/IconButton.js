@@ -1,5 +1,5 @@
 import React from "react";
-import { Pressable, Image } from "react-native";
+import { Pressable } from "react-native";
 
 import styled from "styled-components/native";
 
@@ -12,8 +12,8 @@ const IconButton = ({ onPressOut, type }) => {
 };
 
 const Icon = styled.Image`
-  width: 25;
-  height: 25;
+  width: 25px;
+  height: 25px;
 `;
 
 export default IconButton;

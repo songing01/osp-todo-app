@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Text } from "react-native";
 
 import styled from "styled-components/native";
+
+import { View } from "react-native";
 
 import HomeTaskItem from "./HomeTaskItem";
 import CategoryBar from "../components/CategoryBar";
 import { theme } from "../theme";
+import { images } from "../images";
+import IconButton from "./IconButton";
 
 const HomeTasks = ({ tasks, setTasks }) => {
   const [isAdding, setIsAdding] = useState(false);
@@ -38,19 +41,30 @@ const HomeTasks = ({ tasks, setTasks }) => {
         <HomeTaskItem key={item.id} item={item} />
       ))}
       {isAdding && (
-        <StyledInput
-          value={newTask}
-          placeholder="Add a task"
-          autoFocus={true}
-          onBlur={() => setIsAdding(false)}
-          onSubmitEditing={addTask}
-          onChangeText={setNewTask}
-        />
+        <StyledView>
+          <IconButton type={images.uncomplete} />
+          <StyledInput
+            value={newTask}
+            placeholder="Add a task"
+            autoFocus={true}
+            onBlur={() => setIsAdding(false)}
+            onSubmitEditing={addTask}
+            onChangeText={setNewTask}
+          />
+        </StyledView>
       )}
     </>
   );
 };
 
-const StyledInput = styled.TextInput``;
+const StyledInput = styled.TextInput`
+  margin-left: 5px;
+`;
+
+const StyledView = styled.View`
+  flex-direction: row;
+  margin-left: 5px;
+  color: ${theme.secondary};
+`;
 
 export default HomeTasks;
