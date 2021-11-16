@@ -63,7 +63,7 @@ const StyledInput = styled.TextInput`
 
 const StyledView = styled.View`
   flex-direction: row;
-  margin-left: 5px;
+  padding: 5px;
   color: ${theme.secondary};
 `;
 
